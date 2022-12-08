@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "format": "npx prettier --write .",
     "test": "jest"
   },
   "author": "",
@@ -11,7 +12,8 @@
   "devDependencies": {
     "@jest/globals": "^29.3.1",
     "@types/jest": "^29.2.4",
-    "ts-jest": "^29.0.3",
+    "jest": "^29.3.1",
+    "prettier": "2.8.1",
     "typescript": "^4.9.3"
   }
 }

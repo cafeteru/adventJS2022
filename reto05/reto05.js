@@ -1,16 +1,12 @@
-export function getMaxGifts(
-  giftsCities: number[],
-  maxGifts: number,
-  maxCities: number
-) {
-  let subsets: number[][] = [[]];
-  for (let i = 0; i < giftsCities.length; i++) {
-    var currentLength = subsets.length;
+function getMaxGifts(giftsCities, maxGifts, maxCities) {
+  let subsets = [[]];
+  giftsCities.forEach((x) => {
+    const currentLength = subsets.length;
     for (let j = 0; j < currentLength; j++) {
-      const element = [...subsets[j], giftsCities[i]];
+      const element = [...subsets[j], x];
       subsets.push(element);
     }
-  }
+  });
   let result = 0;
   subsets
     .filter(({ length }) => length > 0 && length <= maxCities)
@@ -22,3 +18,5 @@ export function getMaxGifts(
     });
   return result;
 }
+
+module.exports = getMaxGifts;

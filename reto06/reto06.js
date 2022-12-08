@@ -36,18 +36,19 @@
 //     Asegúrate de usar los símbolos correctos.
 //     Cada nueva línea del cubo debe terminar con un salto de línea (\n) excepto la última.
 
-
-export function createCube(size: number) {
-    let top = '';
-    let down = '';
-    for (let i = 0; i < size; i++) {
-        top += ' '.repeat((size - i - 1));
-        top += '/\\'.repeat(i + 1);
-        top += '_\\'.repeat(size) + '\n';
-        down += ' '.repeat(i);
-        down += '\\/'.repeat(size - (i % size));
-        down += '_/'.repeat(size) + '\n';
-    }
-    const result = top + down
-    return result.substring(0, result.length - 1);
+function createCube(size) {
+  let top = '';
+  let down = '';
+  for (let i = 0; i < size; i++) {
+    top += ' '.repeat(size - i - 1);
+    top += '/\\'.repeat(i + 1);
+    top += '_\\'.repeat(size) + '\n';
+    down += ' '.repeat(i);
+    down += '\\/'.repeat(size - (i % size));
+    down += '_/'.repeat(size) + '\n';
+  }
+  const result = top + down;
+  return result.substring(0, result.length - 1);
 }
+
+module.exports = createCube;
